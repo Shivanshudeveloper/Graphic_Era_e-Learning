@@ -1,0 +1,72 @@
+<%- include('includes/user-navigation.ejs') %>
+  
+  <section id="coursesservices" class="section mt-5">
+    <div class="container">
+      <div class="section-header">          
+        <h2 class="section-title">My Courses</h2>
+        <%- include('includes/search-courses') %>
+      </div>
+      <br>
+    </div>
+  </section>
+
+
+<section>
+    <% if (coursesFound == false) { %>
+        <span class="text-center">
+            <h4>Cart is Empty</h4>
+            <br>
+            <center>
+                <img class="img-fluid" src="img/gif/Cart-empty.gif" alt="" srcset="">
+            </center>
+        </span>
+      <% } else { %>
+        <div class="container">
+        <% coursesInfo.forEach((courses) => { %>
+          <div class="card mt-1" style="width: auto;">
+              <div class="card-body">
+                  <a class="text-primary" href="/seevideos/<%= courses.courseid %>/1">
+                      <h3 class="text-info"><%= courses.coursename %></h3>
+                  </a>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= courses.courseprogram %></h6>
+                  <span>
+                      <i class="fas text-success fa-rupee-sign"></i> <%= courses.courseprice %>
+                  </span>
+                  <span class="ml-2">
+                      <i class="far text-primary fa-clock"></i> <%= courses.coursedurationyear %> Year <%= courses.coursedurationmonth %> Month
+                  </span>
+                  <span class="ml-2">
+                      <i class="fas text-danger fa-tasks"></i> <%= courses.courselevel %>
+                  </span>
+                  <br>
+                  <p class="card-text mt-3">
+                      <%= courses.coursedescription %>
+                  </p>
+                  <br>
+              </div>
+          </div>
+          <% }); %>
+      <% } %>
+      
+      
+
+        
+
+      </div>
+</section>
+  
+  <!-- Footer Section Start -->
+  <%- include('includes/footer') %>
+  <!-- Footer Section End --> 
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>

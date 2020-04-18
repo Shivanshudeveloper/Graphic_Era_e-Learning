@@ -1,0 +1,66 @@
+<%- include('includes/user-navigation.ejs') %>
+  
+  <section id="coursesservices" class="section mt-5">
+    <div class="container">
+      <div class="section-header">          
+        <h2 class="section-title"><%= courseNAME %></h2>
+      </div>
+      <br>
+    </div>
+  </section>
+  <div class="container">
+        <div class="row">
+            <div class="col col-lg-3">
+                <div id="message-area" style="height: 500px; overflow-y: scroll;">
+                    <% allVideos.forEach((videos) => { %>
+                        <span>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <!-- <iframe class="embed-responsive-item" src="<%= videos.videourl %>" allowfullscreen></iframe> -->
+                                <a href="/seevideos/<%= course_id %>/<%= videos.id %>">
+                                  <video>
+                                    <source src="<%= videos.videourl %>" type="video/mp4">
+                                    <source src="<%= videos.videourl %>" type="video/ogg">
+                                  </video>
+                                </a>
+                            </div>
+                            <a class="text-primary h5" href="/seevideos/<%= course_id %>/<%= videos.id %>"><%= videos.videotitle %></a>
+                            <br>
+                            <hr>
+                        </span>
+                    <% }); %>
+                </div>
+            </div>
+            
+            <div class="col-6">
+                    <span>
+                        <video controls style="width:700px;height:400px;" controls>
+                            <source src="<%= videoURL %>" type="video/mp4">
+                            <source src="<%= videoURL %>" type="video/ogg">
+                        </video>
+                    </span>
+                    <h4>
+                        <%= videoTITLE %>
+                    </h4>
+            </div>
+        </div>
+  </div>
+
+    
+
+
+  
+  <!-- Footer Section Start -->
+  <%- include('includes/footer') %>
+  <!-- Footer Section End --> 
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>

@@ -1,0 +1,262 @@
+<%- include('includes/user-navigation.ejs') %>
+  
+  <section id="coursesservices" class="section mt-5">
+    <div class="container">
+      <div class="section-header">          
+        <h2 class="section-title">All Courses</h2>
+        <%- include('includes/search-courses') %>
+      </div>
+      <br>
+    </div>
+  </section>
+
+
+<!-- Courses Category -->
+<section id="coursesservices" class="">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="item-boxes services-item wow fadeInDown animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">
+            <div class="icon color-1">
+              <i class="fas fa-laptop-code"></i>
+              <br>
+              <a href="#!" class="text-dark mt-1">Data Science </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="item-boxes services-item wow fadeInDown animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;">
+            <div class="icon color-2">
+              <i class="fas fa-user-tie"></i>
+              <br>
+              <a href="#!" class="text-dark mt-1">Digital Marketing </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="item-boxes services-item wow fadeInDown animated" data-wow-delay="0.6s" style="visibility: visible;-webkit-animation-delay: 0.6s; -moz-animation-delay: 0.6s; animation-delay: 0.6s;">
+            <div class="icon color-3">
+              <i class="fab fa-java"></i>
+              <br>
+              <a href="#!" class="text-dark mt-1">Technology </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="item-boxes services-item wow fadeInDown animated" data-wow-delay="0.8s" style="visibility: visible;-webkit-animation-delay: 0.6s; -moz-animation-delay: 0.6s; animation-delay: 0.6s;">
+            <div class="icon color-4">
+              <i class="fas fa-piggy-bank"></i>
+              <br>
+              <a href="#!" class="text-dark mt-1">Finance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Courses Category -->
+
+
+  <!-- Services Section End -->
+  <!-- View All Courses -->
+  <section id="allcourses">
+    <div class="container">
+      <div class="section-header">          
+        <p class="section-subtitle">Bachelor of Computer Applications | Bachelor of Business Administration | Bachelor of Commerce</p>
+      </div>
+      <h3>
+        Data Science <i class="fas fa-database"></i>
+      </h3>
+      <div class="row">
+        <% allCourses.forEach((courses) => { %>
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="/viewcourse/<%= courses.id %>"><%= courses.coursename %></a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> <%= courses.totalfee %>
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">
+                      <%= courses.coursedescription %>
+                  </p>
+                  <a href="/viewcourse/<%= courses.id %>" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <% }); %>
+      </div>
+      
+    </div>
+  </section>
+  <!-- View All Courses -->
+
+
+  <!-- View All Courses -->
+  <section class="mt-2" id="allcourses">
+    <div class="container">
+      <h3>
+        Digital Marketing <i class="fas fa-search-dollar"></i>
+      </h3>
+      <div class="row">
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="#">PG Diploma Data Science Full Time</a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> 580,000
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                  <a href="#!" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="#">PG Diploma Data Science Full Time</a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> 580,000
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                  <a href="#!" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="#">PG Diploma Data Science Full Time</a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> 580,000
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                  <a href="#!" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+       
+      </div>
+
+      <div class="row">
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="#">PG Diploma Data Science Full Time</a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> 580,000
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                  <a href="#!" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="#">PG Diploma Data Science Full Time</a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> 580,000
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                  <a href="#!" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="owl-item" style="width: 380px;"><div class="item">
+              <div class="testimonial-item">
+                <div class="author">
+                  <div class="img-thumb">
+                    <img class="w-25" src="/img/geu-sm-logo.jpg" alt="">
+                  </div>
+                  <div class="author-info">
+                    <h2><a href="#">PG Diploma Data Science Full Time</a></h2>
+                    <span>
+                        <i class="fas text-success fa-rupee-sign"></i> 580,000
+                    </span>
+                  </div>
+                </div>
+                <div class="content-inner">
+                  <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quidem, excepturi facere magnam illum, at accusantium doloremque odio.</p>
+                  <a href="#!" class="btn btn-outline btn-primary">View Course</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+       
+      </div>
+    </div>
+  </section>
+  <!-- View All Courses -->
+
+  
+  <!-- Footer Section Start -->
+  <%- include('includes/footer') %>
+  <!-- Footer Section End --> 
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>

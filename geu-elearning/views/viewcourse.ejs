@@ -1,0 +1,105 @@
+<%- include('includes/user-navigation.ejs') %>
+
+  <!-- Services Section End -->
+
+  <!-- View All Courses -->
+  <section class="section mt-5">
+      <div class="container">
+        <div class="card" style="width: auto;">
+            <% allCourses.forEach((courses) => { %>
+
+            <div class="card-body">
+                <h5 class="card-title"><%= courses.coursename %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= courses.courseprogram %></h6>
+                <span>
+                  <a class="text-success" href="#!" data-toggle="modal" data-target="#<%= courses.id %>">
+                      <i class="fas text-success fa-rupee-sign"></i> <%= courses.totalfee %>
+                  </a>
+                </span>
+                
+                <!-- Modal For Fees Structure -->
+                <div class="modal fade" id="<%= courses.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Fees Structure</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <h6>
+                            Registration Fees: <%= courses.registrationfee %>
+                          </h6>
+                            <hr>
+                            <h6>
+                              Tution Fees: <%= courses.tuitionfee %>
+                            </h6>
+                            <hr>
+                            <h6 class="text-dark">
+                                Total Fees: <%= courses.totalfee %>
+                            </h6>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!-- Modal For Fees Structure -->
+
+
+                <span class="ml-2">
+                    <i class="far text-primary fa-clock"></i> <%= courses.durationyear %> Year <%= courses.durationmonth %> Month
+                </span>
+                <span class="ml-2">
+                    <i class="fas text-danger fa-tasks"></i> <%= courses.courselevel %>
+                </span>
+                <br>
+                <br>
+                <!-- <span class="mt-4 mb-1">
+                    <a href="<%= courses.coursevideo %>" class="text-info video-popup">
+                        <i class="fas fa-play"></i> Play Introduction Video
+                    </a>
+                </span> -->
+
+                <p class="card-text mt-3">
+                    <%= courses.coursedescription %>
+                </p>
+                <br>
+
+                <form action="https://paytm-gateway-flekdeno.herokuapp.com/pgRedirect.php" method="post">
+                  <input type="hidden" id="ORDER_ID" name="ORDER_ID" value="<%= orderId %>">
+                  <input type="hidden" id="PRODUCT_ID" name="PRODUCT_ID" value="<%= courses.id %>">
+                  <input type="hidden" id="ORDER_NAME" name="ORDER_NAME" value="<%= courses.coursename %>">
+                  <input type="hidden" id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="<%= userId %>">
+                  <input type="hidden" id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
+                  <input type="hidden" id="CHANNEL_ID" tabindex="4" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+                  <input type="hidden" title="TXN_AMOUNT" tabindex="10"	type="text" name="TXN_AMOUNT"	value="<%= courses.totalfee %>">
+                  <button type="submit" class="btn btn-primary btn-sm">Enroll Now</button>
+                  <a href="/courses" class="btn btn-secondary btn-sm">View Other</a>
+                </form>
+            </div>
+
+            <% }); %>
+
+        </div>
+      </div>
+  </section>
+  <!-- View All Courses -->
+
+  <!-- Footer Section Start -->
+  <%- include('includes/footer') %>
+  <!-- Footer Section End --> 
+
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>

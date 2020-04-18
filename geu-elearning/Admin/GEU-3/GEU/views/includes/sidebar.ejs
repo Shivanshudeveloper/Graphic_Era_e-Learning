@@ -1,0 +1,51 @@
+<div class="sidebar" data-image="/img/sidebar-5.jpg" data-color="azure">
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="http://www.geu.ac.in" class="simple-text">
+                <b>Graphic Era University</b>
+            </a>
+        </div>
+        <ul class="nav">
+            <% if(login == 'admin') { %>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/dashboard">
+                    <i class="nc-icon nc-chart-pie-35"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="/admin/courses">
+                    <i class="nc-icon nc-paper-2"></i>
+                    <p>Courses</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="/admin/faculty">
+                    <i class="nc-icon nc-circle-09"></i>
+                    <p>Faculty</p>
+                </a>
+            </li>
+            <% } %>
+            <% if(login == 'faculty') {%>
+            <li class="nav-item active">
+                <a class="nav-link" href="/faculty/dashboard">
+                    <i class="nc-icon nc-chart-pie-35"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <!-- <li>
+                <a class="nav-link" href="/faculty/profile">
+                    <i class="nc-icon nc-paper-2"></i>
+                    <p>Profile</p>
+                </a>
+            </li> -->
+            <li>
+                <a class="nav-link" href="/faculty/courses">
+                    <i class="nc-icon nc-paper-2"></i>
+                    <p>Courses</p>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>

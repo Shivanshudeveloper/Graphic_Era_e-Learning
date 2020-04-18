@@ -1,0 +1,198 @@
+<body>
+        <div class="wrapper">
+            <%- include includes/sidebar.ejs%>
+            <div class="main-panel">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg" color-on-scroll="500">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="">Faculty</a>
+                        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                            <!-- <ul class="nav navbar-nav mr-auto ml-5">
+                                <li class="dropdown nav-item">
+                                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                        <i class="nc-icon nc-planet"></i>
+                                        <span class="notification">5</span>
+                                        <span class="d-lg-none">Notification</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Notification 1</a>
+                                        <a class="dropdown-item" href="#">Notification 2</a>
+                                        <a class="dropdown-item" href="#">Notification 3</a>
+                                        <a class="dropdown-item" href="#">Notification 4</a>
+                                        <a class="dropdown-item" href="#">Another notification</a>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nc-icon nc-zoom-split"></i>
+                                        <span class="d-lg-block">&nbsp;Search</span>
+                                    </a>
+                                </li>
+                            </ul> -->
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/logout">
+                                        <span class="no-icon">Log out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+                <div class="content">
+                    <div class="container-fluid">
+                       <div class="card">
+                           <div class="card-header" style="text-align:center">
+                               <h3 class="card-title">Upload Assignment</h3>
+                           </div>
+                           <div class="card-body mt-3">
+                               <form action="/faculty/upload" method="POST" enctype="multipart/form-data">
+
+                                    <!-- Course Id -->
+                                    <div class="row" style="display: none;">
+                                        <div class="col-md-2">
+                                            <h5 class="mt-2">Course ID :</h5>
+                                        </div>
+                                        <div class="col-md-8 ml-3">
+                                            <input type="text" class="form-control" id="courseid" placeholder="Course ID" name="courseid" value="<%= courseid %>">
+                                        </div>
+                                    </div>
+
+
+                                   <!-- Course Name -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h5 class="mt-2">Assignment Title :</h5>
+                                        </div>
+                                        <div class="col-md-8 ml-3">
+                                            <input type="text" class="form-control" id="videotitle" placeholder="Assignment Title" name="videotitle" pattern="^[A-Za-z -]+$" required>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Description -->
+                                    <div class="row mb-4">
+                                        <div class="col-md-2">
+                                            <h5 class="mt-2">Description :</h5>
+                                        </div>
+                                        <div class="col-md-8 ml-3">
+                                            <textarea class="form-control" id="videodescription" placeholder="Assignment Description (min. 200 words)" name="videodescription" pattern="^[A-Za-z -]+$" style="height:20vh" required></textarea>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Video -->
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h5 class="mt-2">Assignment :</h5>
+                                        </div>
+                                        <div class="col-md-8 ml-3">
+                                            <input type="file" id="video" name="video">
+                                        </div>
+                                    </div>
+    
+                                    <div class="mt-3 mb-3" style="text-align: center;">
+                                        <button class="btn btn-md btn-primary" type="submit" name="uploadassignment" style="width:15vw">Upload Assignment</button>
+                                    </div>
+    
+                               </form>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav>
+                            <p class="copyright text-center">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>
+                                <a href="http://www.geu.ac.in">Graphic Era University</a>
+                            </p>
+                        </nav>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!--   -->
+        <!-- <div class="fixed-plugin">
+        <div class="dropdown show-dropdown">
+            <a href="#" data-toggle="dropdown">
+                <i class="fa fa-cog fa-2x"> </i>
+            </a>
+    
+            <ul class="dropdown-menu">
+                <li class="header-title"> Sidebar Style</li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger">
+                        <p>Background Image</p>
+                        <label class="switch">
+                            <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
+                        </label>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger background-color">
+                        <p>Filters</p>
+                        <div class="pull-right">
+                            <span class="badge filter badge-black" data-color="black"></span>
+                            <span class="badge filter badge-azure" data-color="azure"></span>
+                            <span class="badge filter badge-green" data-color="green"></span>
+                            <span class="badge filter badge-orange" data-color="orange"></span>
+                            <span class="badge filter badge-red" data-color="red"></span>
+                            <span class="badge filter badge-purple active" data-color="purple"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="header-title">Sidebar Images</li>
+    
+                <li class="active">
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="/img/sidebar-1.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="/img/sidebar-3.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="/views//assets/img/sidebar-4.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="/img/sidebar-5.jpg" alt="" />
+                    </a>
+                </li>
+    
+                <li class="button-container">
+                    <div class="">
+                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
+                    </div>
+                </li>
+    
+                <li class="header-title pro-title text-center">Want more components?</li>
+    
+                <li class="button-container">
+                    <div class="">
+                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
+                    </div>
+                </li>
+    
+                <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
+    
+                <li class="button-container">
+                    <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
+                    <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+     -->
+    </body>
+    </html>
+    
